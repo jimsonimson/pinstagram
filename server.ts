@@ -4,7 +4,16 @@ import favicon = require('serve-favicon');
 import logger = require('morgan');
 import cookieParser = require('cookie-parser');
 import bodyParser = require('body-parser');
+import passport = require('./config/passport');
+
 const app = express();
+
+//Models
+import mongoose = require('mongoose');
+require('./api/user');
+
+//Mongoose connection
+mongoose.connect('mongodb://localhost/pinsta');
 
 // view engine setup
 app.set('views', './views');
@@ -17,6 +26,10 @@ if (process.env.NODE_ENV !== 'test') app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
+
+//Routes
+let userRoutes = require('./ngApp/modules/user/routes/userRoutes');
+app.use('/api/v1/users', userRoutes);
 
 app.use(express.static('./ngApp'));
 app.use('/scripts', express.static('bower_components'));

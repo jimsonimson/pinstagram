@@ -8,8 +8,14 @@ namespace app {
 
     $stateProvider.state('Home', {
       url: '/',
-      templateUrl: '/modules/home/view/home.html',
+      templateUrl: '/modules/Home/view/home.html',
       controller: app.Controllers.HomeController,
+      controllerAs: 'vm'
+    })
+    .state('Register', {
+      url: '/register',
+      templateUrl: '/modules/User/view/Register.html',
+      controller: app.Controllers.UserController,
       controllerAs: 'vm'
     });
     
