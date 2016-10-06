@@ -1,3 +1,4 @@
+'use strict'
 require('dotenv').config({ silent: true });
 import express = require('express');
 import favicon = require('serve-favicon');
@@ -11,6 +12,8 @@ const app = express();
 //Models
 import mongoose = require('mongoose');
 require('./api/user');
+require('./api/board');
+require('./config/passport');
 
 //Mongoose connection
 mongoose.connect('mongodb://localhost/pinsta');
@@ -29,7 +32,9 @@ app.use(cookieParser());
 
 //Routes
 let userRoutes = require('./ngApp/modules/user/routes/userRoutes');
+let boardRoutes = require('./ngApp/modules/board/routes/boardRoutes');
 app.use('/api/v1/users', userRoutes);
+app.use('/api/v1/boards', boardRoutes);
 
 app.use(express.static('./ngApp'));
 app.use('/scripts', express.static('bower_components'));

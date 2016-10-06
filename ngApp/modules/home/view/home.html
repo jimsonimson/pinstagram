@@ -1,2 +1,21 @@
-<h1>Home Page</h1>
-<a ui-sref="Register">Register</a>
+<div class="container">
+  <h1>Home Page</h1>
+  <div class="row">
+    
+  </div>
+  <a ng-show="vm.user" ui-sref="Login">Login</a>
+  <a ng-show="!vm.user" ui-sref="Register">Register</a>
+  <div class="col-xs-6 col-xs-offset-3">
+    <div class="panel panel-default">
+      <div class="panel-body">
+        <h2 ng-show="vm.user !== null">Welcome: {{vm.user.username}}</h2>
+        <button ng-click="vm.createBoard()" type="button" class="btn btn-toolbar" name="button">Create Board</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+

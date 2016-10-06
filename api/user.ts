@@ -6,23 +6,13 @@ import jwt = require('jsonwebtoken');
 let UserSchema = new mongoose.Schema({
   username: { type: String, lowercase: true, unique: true },
   email: { type: String, unique: true, lowercase: true},
-  profession: { type: String },
   passwordHash: String,
   salt: String,
-  firstName: { type: String },
+  boards: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Board' }],
+  pins: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Pin' }],
   lastName: { type: String },
   joined: { type: Date, default: Date.now },
   avatar: { type: String },
-  about: { type: String },
-  pics: [{type: String }],
-  appointments: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Appointment' }],
-  hairstyles: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Hairstyle'}],
-  availability: [{ type: String }],
-  tags: [{ type: String }],
-  barbershop: {type: String},
-  barbershopAddress: { type: String },
-  phone: { type: String },
-  socialMedia: [{type: String}]
 })
 
 UserSchema.method('setPassword', function(password){

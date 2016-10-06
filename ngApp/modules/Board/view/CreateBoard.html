@@ -4,45 +4,46 @@
 
     <!-- header start -->
     <div class="text-center">
-      <img src="./assets/images/pinsta.png" style="max-height:100px" />
-      <p class="title"><b>Pinsta</b>Gram</p>
-      <h5><em>Pin photos you find on instagram</em></h5>
+      <p class="title"><b>Create a Board</b></p>
+      <h5><em>Make a board to post categories of your instagram finds</em></h5>
     </div>
     <!-- header end -->
 
     <!-- login input start -->
     <div class="panel panel-default">
       <div class="panel-body">
-        <form ng-submit="vm.register()">
+        <form ng-submit="vm.createBoard()">
           <div class="form-group">
-            <h2>Register</h2>
+            <h2>Create Board</h2>
           </div>
           <div class="form-group">
-            <label for="exampleInputEmail1">Username</label>
+            <label for="exampleInputEmail1">Board</label>
+            <input
+              type="text"
+              class="form-control"
+              placeholder="Title"
+              ng-model="vm.board.title" />
+          </div>
+          <div class="form-group">
+            <label for="exampleInputEmail1">Category</label>
             <input
               type="text"
               class="form-control"
               id="exampleInputEmail1"
-              placeholder="Username"
-              ng-model="vm.user.username" />
+              placeholder="Category"
+              ng-model="vm.board.category" />
           </div>
           <div class="form-group">
-            <label for="exampleInputEmail1">Email</label>
-            <input
-              type="text"
-              class="form-control"
-              id="exampleInputEmail1"
-              placeholder="Username"
-              ng-model="vm.user.email" />
-          </div>
-          <div class="form-group">
-            <label for="exampleInputPassword1">Password</label>
-            <input
-              type="password"
-              class="form-control"
-              id="exampleInputPassword1"
-              placeholder="Password"
-              ng-model="vm.user.password" />
+            <label for="exampleInputPassword1">Tags</label>
+            <chips ng-model="vm.board.tags">
+              <chip-tmpl>
+                <div class="default-chip">
+                  {{chip}}
+                  <span class="glyphicon glyphicon-remove" remove-chip></span>
+                </div>
+              </chip-tmpl>
+              <input chip-control></input>
+            </chips>
           </div>
           <button type="submit" class="btn btn-default">Submit</button>
           <a ui-sref="Register">New Account</a>

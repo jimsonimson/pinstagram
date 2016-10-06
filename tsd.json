@@ -1,0 +1,36 @@
+{
+  "version": "v4",
+  "repo": "borisyankov/DefinitelyTyped",
+  "ref": "master",
+  "path": "typings",
+  "bundle": "typings/tsd.d.ts",
+  "installed": {
+    "jquery/jquery.d.ts": {
+      "commit": "5b4b22a2e84ad166ecd4f388f872a4ba32fddfbd"
+    },
+    "angularjs/angular.d.ts": {
+      "commit": "5b4b22a2e84ad166ecd4f388f872a4ba32fddfbd"
+    },
+    "express/express.d.ts": {
+      "commit": "5b4b22a2e84ad166ecd4f388f872a4ba32fddfbd"
+    },
+    "serve-static/serve-static.d.ts": {
+      "commit": "5b4b22a2e84ad166ecd4f388f872a4ba32fddfbd"
+    },
+    "express-serve-static-core/express-serve-static-core.d.ts": {
+      "commit": "5b4b22a2e84ad166ecd4f388f872a4ba32fddfbd"
+    },
+    "node/node.d.ts": {
+      "commit": "5b4b22a2e84ad166ecd4f388f872a4ba32fddfbd"
+    },
+    "mongoose/mongoose.d.ts": {
+      "commit": "5b4b22a2e84ad166ecd4f388f872a4ba32fddfbd"
+    },
+    "mime/mime.d.ts": {
+      "commit": "5b4b22a2e84ad166ecd4f388f872a4ba32fddfbd"
+    },
+    "mongodb/mongodb.d.ts": {
+      "commit": "5b4b22a2e84ad166ecd4f388f872a4ba32fddfbd"
+    }
+  }
+}
