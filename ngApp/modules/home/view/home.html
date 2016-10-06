@@ -9,7 +9,11 @@
     <div class="panel panel-default">
       <div class="panel-body">
         <h2 ng-show="vm.user !== null">Welcome: {{vm.user.username}}</h2>
-        <button ng-click="vm.createBoard()" type="button" class="btn btn-toolbar" name="button">Create Board</button>
+        <button ng-click="vm.viewBoards()" type="button" class="ui secondary button" name="button">View Boards</button>
+        <button ng-click="vm.createBoard()" class="ui active button">
+          <i class="plus icon"></i>
+          Create Board
+        </button>
       </div>
     </div>
   </div>

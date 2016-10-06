@@ -16,6 +16,7 @@
     "express-jwt": "^5.1.0",
     "get-instagram-photo": "0.0.1",
     "morgan": "^1.7.0",
+    "semantic-ui": "^2.2.4",
     "serve-favicon": "^2.3.0"
   }
 }

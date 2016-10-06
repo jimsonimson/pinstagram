@@ -6,7 +6,10 @@ namespace app.Controllers {
     constructor(
       private BoardService: app.Services.BoardService
     ){
-      this.boards = this.BoardService.getAllBoards();
+      BoardService.getAllBoards().then((res) => {
+        this.boards = res;
+      });
+      
     }
   }
   angular.module('app').controller('BoardController', BoardController);

@@ -34,7 +34,7 @@ namespace app {
     .state('Boards', {
       url: '/boards',
       templateUrl: '/modules/Board/view/BoardsPage.html',
-      controller: app.Controllers.CreateBoardController,
+      controller: app.Controllers.BoardController,
       controllerAs: 'vm'
     });
     

@@ -38,6 +38,7 @@ app.use('/api/v1/boards', boardRoutes);
 
 app.use(express.static('./ngApp'));
 app.use('/scripts', express.static('bower_components'));
+// app.use('/npm', express.static('node_modules'));
 
 app.get('/*', function(req, res, next) {
   if (/.js|.html|.css|templates|js|scripts/.test(req.path) || req.xhr) {

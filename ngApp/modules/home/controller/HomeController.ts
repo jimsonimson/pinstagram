@@ -5,6 +5,10 @@ namespace app.Controllers {
     public createBoard(){
       this.$location.path('/createboard');
     }
+    
+    public viewBoards(){
+      this.$location.path('/boards')
+    }
 
     constructor(
       private UserService: app.Services.UserService,

@@ -1,7 +1,23 @@
 <div class="container">
+  <h1>List of boards</h1>
   <div class="col-xs-4" ng-repeat="b in vm.boards">
-    <div class="panel">
-      {{b}}
+    <div class=" ui link cards">
+      <div class="card">
+        <div class="image">
+          <img src="https://s-media-cache-ak0.pinimg.com/564x/1c/ed/a2/1ceda2022c2dc02a605e8f933903c3e1.jpg">
+        </div>
+        <div class="content">
+          <div class="header">{{b.title}}</div>
+          <div class="meta">
+            <b>4</b><a>Pins</a>
+          </div>
+        </div>
+        <div class="extra content">
+          <button class="ui right floated button">Edit</button>
+        </div>
+      </div>
     </div>
   </div>
+  
+  
 </div>
