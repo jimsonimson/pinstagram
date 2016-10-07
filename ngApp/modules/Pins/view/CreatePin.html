@@ -1,0 +1,57 @@
+<div class="row pform">
+  <div class="col-xs-4"></div>
+  <div class="col-xs-4">
+
+    <!-- header start -->
+    <div class="text-center">
+      <p class="title"><b>Create a Pin</b></p>
+      <h5><em>Make a board to post categories of your instagram finds</em></h5>
+    </div>
+    <!-- header end -->
+
+    <!-- login input start -->
+    <div class="panel panel-default">
+      <div class="panel-body">
+        <form ng-submit="vm.createBoard()">
+          <div class="form-group">
+            <h2>Post Pin</h2>
+          </div>
+          <div class="form-group">
+            <label for="exampleInputEmail1">Pin</label>
+            <input
+              type="text"
+              class="form-control"
+              placeholder="Title"
+              ng-model="vm.board.title" />
+          </div>
+          <div class="form-group">
+            <label for="exampleInputEmail1">Category</label>
+            <input
+              type="text"
+              class="form-control"
+              id="exampleInputEmail1"
+              placeholder="Category"
+              ng-model="vm.board.category" />
+          </div>
+          <div class="form-group">
+            <label for="exampleInputPassword1">Tags</label>
+            <chips ng-model="vm.board.tags">
+              <chip-tmpl>
+                <div class="default-chip">
+                  {{chip}}
+                  <span class="glyphicon glyphicon-remove" remove-chip></span>
+                </div>
+              </chip-tmpl>
+              <input chip-control></input>
+            </chips>
+          </div>
+          <button type="submit" class="btn btn-default">Submit</button>
+          <a ui-sref="Register">New Account</a>
+        </form>
+      </div>
+    </div>
+    <!-- login input end -->
+
+  </div>
+  <div class="col-xs-4"></div>
+</div>
