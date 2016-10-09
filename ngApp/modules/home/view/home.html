@@ -1,25 +1,58 @@
-<div class="container">
+<div class="container-fluid">
   <h1>Home Page</h1>
-  <div class="row">
-    
-  </div>
-  <a ng-show="vm.user" ui-sref="Login">Login</a>
-  <a ng-show="!vm.user" ui-sref="Register">Register</a>
-  <div class="col-xs-6 col-xs-offset-3">
+
+  <div class="col-xs-12 col-md-8 col-md-offset-2">
     <div class="panel panel-default">
       <div class="panel-body">
-        <h2 ng-show="vm.user !== null">Welcome: {{vm.user.username}}</h2>
-        <button ng-click="vm.viewBoards()" type="button" class="ui secondary button" name="button">View Boards</button>
+        <h2 ng-show="vm.user._id !== null">Welcome: {{vm.user.username}}</h2>
+        <div popup class="ui red button"><i class="pin icon"></i>Post pin</div>
+        <div class="ui flowing popup top right transition hidden">
+          <div class="ui two column divided center aligned grid">
+            <div class="column">
+              <h4 class="ui header">Post from Instagram</h4>
+              <button class="ui button tiny">
+                <i class="instagram icon"></i>
+              </button>
+              <pinmodal></pinmodal>
+            </div>
+            <div class="column">
+              <h4 class="ui header">Post Image <br> URL</h4>
+              <div class="ui button tiny"><i class="image icon"></i></div>
+            </div>
+          </div>
+        </div>
+        <div pinmodal class="ui blue test button"><i class="plus icon"></i>Show modal</div>
+        <div class="ui basic modal">
+          <i class="close icon"></i>
+          <div class="header">
+            Archive Old Messages
+          </div>
+          <div class="image content">
+            <div class="image">
+              <i class="archive icon"></i>
+            </div>
+            <div class="description">
+              <p>Your inbox is getting full, would you like us to enable automatic archiving of old messages?</p>
+            </div>
+          </div>
+          <div class="actions">
+            <div class="two fluid ui inverted buttons">
+              <div class="ui cancel red basic inverted button">
+                <i class="remove icon"></i>
+                No
+              </div>
+              <div class="ui ok green basic inverted button">
+                <i class="checkmark icon"></i>
+                Yes
+              </div>
+            </div>
+          </div>
+        </div>
+        <button ng-show="vm.user._id !== null" ng-show="vm.user" ng-click="vm.viewBoards()" type="button" class="ui secondary button" name="button">View My Boards</button>
         <button ng-click="vm.createBoard()" class="ui active button">
           <i class="plus icon"></i>
           Create Board
         </button>
-        <div ng-view popup>
-          <div class="ui red button" data-title="Using click events" data-content="Clicked popups will close if you click away, but not if you click inside the popup" data-position="bottom right">
-            <i class="pin icon"></i>
-            Post Pin
-          </div>
-        </div>
         
       </div>
     </div>

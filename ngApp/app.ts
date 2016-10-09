@@ -36,6 +36,12 @@ namespace app {
       templateUrl: '/modules/Board/view/BoardsPage.html',
       controller: app.Controllers.BoardController,
       controllerAs: 'vm'
+    })
+    .state('BoardPage', {
+      url: '/boards/:id',
+      templateUrl: '/modules/Board/view/BoardDetailsPage.html',
+      controller: app.Controllers.BoardDetailsController,
+      controllerAs: 'vm'
     });
     
     $urlRouterProvider.otherwise('/');

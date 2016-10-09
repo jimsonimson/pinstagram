@@ -13,6 +13,7 @@ const app = express();
 import mongoose = require('mongoose');
 require('./api/user');
 require('./api/board');
+require('./api/pin');
 require('./config/passport');
 
 //Mongoose connection

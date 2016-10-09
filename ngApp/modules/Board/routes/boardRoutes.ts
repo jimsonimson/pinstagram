@@ -32,5 +32,16 @@ router.get('/getAllBoards', auth, (req, res, next) => {
   });
 })
 
+//GET individual board: /api/v1/boards/:username
+router.get('/:id', (req, res, next) => {
+  Board.findOne({ _id: req.params.id })
+  .populate('createdBy', 'username')
+  .exec((err, board) => {
+    if(err) return next(err);
+    if(!board) return next({ message: 'Could not find your board'});
+    res.send(board);
+  })
+})
+
 export = router;
 

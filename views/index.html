@@ -12,13 +12,16 @@
 </head>
 
 <body>
-  <div>
-    <a ui-sref="Home">Home</a>
+  <div ng-controller="NavController as vm">
+    <a ui-sref="Home">Home</a> |
+    <a ng-show="vm.status._id === null" ui-sref="Login">Login</a>
+    <a ng-show="vm.status._id === null" ui-sref="Register">Register</a>
+    <button ng-show="vm.status._id !== null" ng-click="vm.logout()">Logout</button>
   </div>
 
   <ui-view></ui-view>
   
-  <script   src="http://code.jquery.com/jquery-3.1.1.min.js"   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous"></script>
+  <script src="http://code.jquery.com/jquery-3.1.1.min.js"   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous"></script>
   <script src="/scripts/semantic-ui/dist/semantic.min.js"></script>
   <script src="/scripts/angular/angular.min.js"></script>
   <script src="/scripts/angular-ui-router/release/angular-ui-router.min.js"></script>
@@ -37,7 +40,9 @@
   <script src="/modules/User/controller/UserController.js"></script>
   <script src="/modules/Board/controller/CreateBoardController.js"></script>
   <script src="/modules/Board/controller/BoardController.js"></script>
+  <script src="/modules/Nav/controller/NavController.js"></script>
   <script src="/modules/Home/directive/popup.js"></script>
+  <script src="/modules/Home/directive/modal.js"></script>
 </body>
 
 </html>
